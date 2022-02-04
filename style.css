@@ -2,3 +2,9 @@ h1 {
     display : flex;
     justify-content:center;
 }
+body {
+  background-image: url("https://www.slidebackground.com/uploads/ppt-slides-background/blue-slides-simple-backgrounds-presentation-background-2.jpg");
+}
+.linkscolor {
+    color: green;
+}
