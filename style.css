@@ -5,6 +5,24 @@ h1 {
 body {
   background-image: url("https://www.slidebackground.com/uploads/ppt-slides-background/blue-slides-simple-backgrounds-presentation-background-2.jpg");
 }
-.linkscolor {
-    color: green;
+.link1 {
+    color: #AAFF00;
+	display : flex;
+    justify-content:center;
+}
+.link2 {
+    color: #AAFF00;
+	display : flex;
+    justify-content:center;
+}
+   
+.space {
+    padding:20px;
+}
+
+p {
+    display : flex;
+    justify-content:center;
+    color : white;
+    
 }
