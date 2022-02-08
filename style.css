@@ -1,25 +1,21 @@
 h1 {
     display : flex;
     justify-content:center;
+    font-family: 'Rowdies', cursive;
+    color: #424949;
 }
 body {
   background-image: url("https://i.pinimg.com/736x/6f/dd/c2/6fddc2452eecc49ffa59567e5eabc217.jpg");
 }
 .link1 {
-    color: #AAFF00;
+    color: #900C3F;
 	display : flex;
     justify-content:center;
+    font-family: 'Rowdies', cursive;
 }
-.link2 {
-    color: #AAFF00;
-	display : flex;
-    justify-content:center;
-}
-   
 .space {
     padding:20px;
 }
-
 p {
     display : flex;
     justify-content:center;
