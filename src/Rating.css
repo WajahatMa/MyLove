@@ -1,0 +1,77 @@
+/* Rating.css */
+
+.rating-page {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #121212;
+    color: #f5f5f5;
+    height: 100vh;
+    box-sizing: border-box;
+  }
+  
+  /* Top Section */
+  .top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #333; /* Separator line */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .product-title {
+    font-size: 1.8rem;
+    color: #1e90ff;
+    flex: 1;
+  }
+  
+  .rating-stars {
+    display: flex;
+    gap: 5px;
+    flex: 1;
+    justify-content: center;
+  }
+  
+  .fa-star {
+    color: gold;
+    font-size: 24px;
+  }
+  
+  .other-choices {
+    flex: 1;
+    text-align: right;
+    color: #f5f5f5;
+    font-weight: bold;
+  }
+  
+  /* Middle Section */
+  .description-section {
+    font-size: 1.1rem;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    color: #c0c0c0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Bottom Section */
+  .badges-section {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    border-top: 2px solid #333; /* Separator line */
+    padding-top: 10px;
+  }
+  
+  .badge {
+    background-color: #28a745;
+    color: #fff;
+    padding: 5px 12px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
