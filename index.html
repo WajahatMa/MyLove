@@ -65,7 +65,7 @@ body {
     border-radius: 12px;
     text-align: center;
     width: 90%;
-    max-width: 600px;
+    max-width: 800px;
     display: none;
 }
 
@@ -77,11 +77,15 @@ body {
 #videoModal ul {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 #videoModal ul li {
-    margin: 10px 0;
+    margin: 10px;
 }
 
 #videoModal ul li a {
@@ -93,6 +97,9 @@ body {
     border-radius: 8px;
     background: #ffffff;
     transition: all 0.3s;
+    display: block;
+    width: 120px;
+    text-align: center;
 }
 
 #videoModal ul li a:hover {
@@ -117,19 +124,22 @@ body {
 }
 
 #videoBox {
-    width: 100%;
-    max-width: 560px;
+    width: 70%; /* Takes up 70% of the screen width */
+    max-height: 70%; /* Ensures it doesn’t exceed 70% of screen height */
     border-radius: 12px;
     overflow: hidden;
     margin: 20px auto;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    background: black; /* Background for better visibility */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #videoBox video {
     width: 100%;
     height: auto;
     display: block;
-    background: black;
 }
 </style>
 
@@ -180,7 +190,7 @@ body {
                 </video>
             </div>
             <ul>
-                <li><a href="#" onclick="playVideo('IMG_2444.mp4')">Video 1</a></li>
+                <li><a href="#" onclick="playVideo('video1.mp4')">Video 1</a></li>
                 <li><a href="#" onclick="playVideo('video2.mp4')">Video 2</a></li>
                 <li><a href="#" onclick="playVideo('video3.mp4')">Video 3</a></li>
                 <li><a href="#" onclick="playVideo('video4.mp4')">Video 4</a></li>
