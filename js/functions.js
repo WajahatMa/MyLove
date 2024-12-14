@@ -142,3 +142,13 @@ function adjustCodePosition() {
 function showLoveU() {
 	$('#loveu').fadeIn(3000);
 }
+function showVideoOptions() {
+    const modal = document.getElementById('videoModal');
+    modal.style.display = 'block';
+}
+
+function closeVideoOptions() {
+    const modal = document.getElementById('videoModal');
+    modal.style.display = 'none';
+}
+
