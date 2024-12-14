@@ -123,13 +123,8 @@ function closeVideoOptions() {
 }
 
 function playVideo(videoSrc) {
-    const videoElement = document.createElement('video');
-    videoElement.src = videoSrc;
-    videoElement.controls = true;
-    videoElement.autoplay = true;
     const modal = document.getElementById('videoModal');
-    modal.innerHTML = ''; // Clear previous content
-    modal.appendChild(videoElement);
+    modal.innerHTML = '<video style="width:90%; height:auto; max-height:400px;" src="' + videoSrc + '" controls autoplay></video>'; // Limit size
     const closeButton = document.createElement('button');
     closeButton.textContent = 'Close';
     closeButton.style = "padding:10px 20px; background-color:#6a0dad; color:white; border:none; border-radius:5px; cursor:pointer; margin-top:10px;";
