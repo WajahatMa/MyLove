@@ -75,8 +75,8 @@
         <li style="margin-bottom:10px;"><a href="#" onclick="playVideo('video3.mp4')">Video 3</a></li>
         <li style="margin-bottom:10px;"><a href="#" onclick="playVideo('video4.mp4')">Video 4</a></li>
     </ul>
-    <button onclick="closeVideoOptions()" style="padding:10px 20px; background-color:#6a0dad; color:white; border:none; border-radius:5px; cursor:pointer; margin-right: 10px;">Close</button>
-    <button onclick="showVideoOptions()" style="padding:10px 20px; background-color:#6a0dad; color:white; border:none; border-radius:5px; cursor:pointer;">Back</button>
+    <button id="closeButton" onclick="closeVideoOptions()" style="padding:10px 20px; background-color:#6a0dad; color:white; border:none; border-radius:5px; cursor:pointer; margin-right: 10px;">Close</button>
+    <button id="backButton" onclick="showVideoOptions()" style="padding:10px 20px; background-color:#6a0dad; color:white; border:none; border-radius:5px; cursor:pointer; display:none;">Back</button>
 </div>
 
 <script type="text/javascript">
@@ -115,6 +115,8 @@ if (!document.createElement('canvas').getContext) {
 // Video Modal Logic
 function showVideoOptions() {
     const modal = document.getElementById('videoModal');
+    const backButton = document.getElementById('backButton');
+    backButton.style.display = 'none';
     modal.style.display = 'block';
     modal.innerHTML = `
         <h3>Choose a Video</h3>
@@ -124,8 +126,8 @@ function showVideoOptions() {
             <li style="margin-bottom:10px;"><a href="#" onclick="playVideo('video3.mp4')">Video 3</a></li>
             <li style="margin-bottom:10px;"><a href="#" onclick="playVideo('video4.mp4')">Video 4</a></li>
         </ul>
-        <button onclick="closeVideoOptions()" style="padding:10px 20px; background-color:#6a0dad; color:white; border:none; border-radius:5px; cursor:pointer; margin-right: 10px;">Close</button>
-        <button onclick="showVideoOptions()" style="padding:10px 20px; background-color:#6a0dad; color:white; border:none; border-radius:5px; cursor:pointer;">Back</button>
+        <button id="closeButton" onclick="closeVideoOptions()" style="padding:10px 20px; background-color:#6a0dad; color:white; border:none; border-radius:5px; cursor:pointer; margin-right: 10px;">Close</button>
+        <button id="backButton" onclick="showVideoOptions()" style="padding:10px 20px; background-color:#6a0dad; color:white; border:none; border-radius:5px; cursor:pointer; display:none;">Back</button>
     `;
 }
 
@@ -136,13 +138,15 @@ function closeVideoOptions() {
 
 function playVideo(videoSrc) {
     const modal = document.getElementById('videoModal');
+    const backButton = document.getElementById('backButton');
     modal.innerHTML = `
         <video style="width:100%; height:auto; max-height:600px;" src="${videoSrc}" controls autoplay></video>
         <div style="margin-top:10px;">
             <button onclick="closeVideoOptions()" style="padding:10px 20px; background-color:#6a0dad; color:white; border:none; border-radius:5px; cursor:pointer; margin-right: 10px;">Close</button>
-            <button onclick="showVideoOptions()" style="padding:10px 20px; background-color:#6a0dad; color:white; border:none; border-radius:5px; cursor:pointer;">Back</button>
+            <button id="backButton" onclick="showVideoOptions()" style="padding:10px 20px; background-color:#6a0dad; color:white; border:none; border-radius:5px; cursor:pointer;">Back</button>
         </div>
     `;
+    backButton.style.display = 'inline-block';
 }
 </script>
 </body>
