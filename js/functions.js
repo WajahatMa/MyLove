@@ -1,4 +1,3 @@
-﻿
 var $window = $(window), gardenCtx, gardenCanvas, $garden, garden;
 var clientWidth = $(window).width();
 var clientHeight = $(window).height();
@@ -141,4 +140,31 @@ function adjustCodePosition() {
 
 function showLoveU() {
 	$('#loveu').fadeIn(3000);
+}
+
+// New Functions
+function showVideoSelection() {
+	document.getElementById('content').style.display = 'none'; // Hide main content
+	document.getElementById('videoSelection').style.display = 'block'; // Show video selection
+}
+
+function playVideo(videoSrc) {
+	document.getElementById('videoSelection').style.display = 'none'; // Hide video selection
+	document.getElementById('videoPlayer').style.display = 'block'; // Show video player
+
+	const videoElement = document.getElementById('videoElement');
+	const videoSource = document.getElementById('videoSource');
+	videoSource.src = videoSrc;
+	videoElement.load();
+	videoElement.play();
+}
+
+function backToSelection() {
+	document.getElementById('videoPlayer').style.display = 'none'; // Hide video player
+	document.getElementById('videoSelection').style.display = 'block'; // Show video selection
+}
+
+function backToWebsite() {
+	document.getElementById('videoSelection').style.display = 'none'; // Hide video selection
+	document.getElementById('content').style.display = 'block'; // Show main content
 }
