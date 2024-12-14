@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/TR/xhtml1/1999/xhtml">
 <head>
 <script src="https://kit.fontawesome.com/a14ae32021.js" crossorigin="anonymous"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -75,7 +75,8 @@
         <li style="margin-bottom:10px;"><a href="#" onclick="playVideo('video3.mp4')">Video 3</a></li>
         <li style="margin-bottom:10px;"><a href="#" onclick="playVideo('video4.mp4')">Video 4</a></li>
     </ul>
-    <button onclick="closeVideoOptions()" style="padding:10px 20px; background-color:#6a0dad; color:white; border:none; border-radius:5px; cursor:pointer;">Close</button>
+    <button onclick="closeVideoOptions()" style="padding:10px 20px; background-color:#6a0dad; color:white; border:none; border-radius:5px; cursor:pointer; margin-right: 10px;">Close</button>
+    <button onclick="showVideoOptions()" style="padding:10px 20px; background-color:#6a0dad; color:white; border:none; border-radius:5px; cursor:pointer;">Back</button>
 </div>
 
 <script type="text/javascript">
@@ -115,11 +116,6 @@ if (!document.createElement('canvas').getContext) {
 function showVideoOptions() {
     const modal = document.getElementById('videoModal');
     modal.style.display = 'block';
-}
-
-function closeVideoOptions() {
-    const modal = document.getElementById('videoModal');
-    modal.style.display = 'none';
     modal.innerHTML = `
         <h3>Choose a Video</h3>
         <ul style="list-style:none; padding:0;">
@@ -128,18 +124,30 @@ function closeVideoOptions() {
             <li style="margin-bottom:10px;"><a href="#" onclick="playVideo('video3.mp4')">Video 3</a></li>
             <li style="margin-bottom:10px;"><a href="#" onclick="playVideo('video4.mp4')">Video 4</a></li>
         </ul>
-        <button onclick="closeVideoOptions()" style="padding:10px 20px; background-color:#6a0dad; color:white; border:none; border-radius:5px; cursor:pointer;">Close</button>
+        <button onclick="closeVideoOptions()" style="padding:10px 20px; background-color:#6a0dad; color:white; border:none; border-radius:5px; cursor:pointer; margin-right: 10px;">Close</button>
+        <button onclick="showVideoOptions()" style="padding:10px 20px; background-color:#6a0dad; color:white; border:none; border-radius:5px; cursor:pointer;">Back</button>
     `;
+}
+
+function closeVideoOptions() {
+    const modal = document.getElementById('videoModal');
+    modal.style.display = 'none';
 }
 
 function playVideo(videoSrc) {
     const modal = document.getElementById('videoModal');
-    modal.innerHTML = '<video style="width:90%; height:auto; max-height:400px;" src="' + videoSrc + '" controls autoplay></video>'; // Limit size
+    modal.innerHTML = '<video style="width:135%; height:auto; max-height:600px;" src="' + videoSrc + '" controls autoplay></video>'; // Enlarged size
     const closeButton = document.createElement('button');
     closeButton.textContent = 'Close';
-    closeButton.style = "padding:10px 20px; background-color:#6a0dad; color:white; border:none; border-radius:5px; cursor:pointer; margin-top:10px;";
+    closeButton.style = "padding:10px 20px; background-color:#6a0dad; color:white; border:none; border-radius:5px; cursor:pointer; margin-top:10px; margin-right: 10px;";
     closeButton.onclick = closeVideoOptions;
     modal.appendChild(closeButton);
+
+    const backButton = document.createElement('button');
+    backButton.textContent = 'Back';
+    backButton.style = "padding:10px 20px; background-color:#6a0dad; color:white; border:none; border-radius:5px; cursor:pointer; margin-top:10px;";
+    backButton.onclick = showVideoOptions;
+    modal.appendChild(backButton);
 }
 </script>
 </body>
