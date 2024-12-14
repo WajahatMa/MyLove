@@ -48,7 +48,23 @@
 			Click the heart to see my favorite moment of us. <br />
 			<br>
 			<span id="heartspan">
-			<a href="IMG_2444.mp4"><i class="fas fa-heart" id="icon"></i></a>
+			<span id="heartspan">
+    <i class="fas fa-heart" id="icon" onclick="showVideoOptions()"></i>
+</span>
+
+<div id="videoModal" style="display:none;">
+    <div id="modalContent">
+        <h3>Choose a Video</h3>
+        <ul>
+            <li><a href="video1.mp4" target="_blank">Video 1</a></li>
+            <li><a href="video2.mp4" target="_blank">Video 2</a></li>
+            <li><a href="video3.mp4" target="_blank">Video 3</a></li>
+            <li><a href="video4.mp4" target="_blank">Video 4</a></li>
+        </ul>
+        <button onclick="closeVideoOptions()">Close</button>
+    </div>
+</div>
+
 			</span>
 		</div>
 		<div id="loveHeart">
