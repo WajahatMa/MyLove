@@ -120,6 +120,16 @@ function showVideoOptions() {
 function closeVideoOptions() {
     const modal = document.getElementById('videoModal');
     modal.style.display = 'none';
+    modal.innerHTML = `
+        <h3>Choose a Video</h3>
+        <ul style="list-style:none; padding:0;">
+            <li style="margin-bottom:10px;"><a href="#" onclick="playVideo('video1.mp4')">Video 1</a></li>
+            <li style="margin-bottom:10px;"><a href="#" onclick="playVideo('video2.mp4')">Video 2</a></li>
+            <li style="margin-bottom:10px;"><a href="#" onclick="playVideo('video3.mp4')">Video 3</a></li>
+            <li style="margin-bottom:10px;"><a href="#" onclick="playVideo('video4.mp4')">Video 4</a></li>
+        </ul>
+        <button onclick="closeVideoOptions()" style="padding:10px 20px; background-color:#6a0dad; color:white; border:none; border-radius:5px; cursor:pointer;">Close</button>
+    `;
 }
 
 function playVideo(videoSrc) {
