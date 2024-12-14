@@ -16,75 +16,153 @@ body {
     padding: 0;
     background: #f8f0ff;
     font-size: 12px;
-    overflow: auto;
+    overflow: hidden;
     font-family: "Arial", sans-serif;
 }
 
 #mainDiv {
     width: 100%;
     height: 100%;
-}
-
-#loveHeart {
-    float: left;
-    width: 670px;
-    height: 625px;
     position: relative;
 }
 
-#garden {
+#loveHeart {
+    position: relative;
     width: 100%;
     height: 100%;
+}
+
+#garden {
     position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
 }
 
 #words {
     position: absolute;
-    top: 250px;
-    left: 180px;
-    color: #6a0dad;
-    font-family: "Arial", sans-serif;
-}
-
-#messages {
-    display: none;
+    width: 100%;
     text-align: center;
-    font-size: 24px;
-    color: #6a0dad;
-}
-
-#elapseClock {
-    text-align: center;
-    font-size: 18px;
-    margin-top: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
     color: #800080;
     font-family: "digit";
 }
 
+#elapseClock {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #800080;
+}
+
 #loveu {
-    padding: 5px;
     font-size: 24px;
-    margin-top: 80px;
-    text-align: center;
-    display: none;
-    color: #6a0dad;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #800080;
+}
+
+#heartspan {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    z-index: 3;
 }
 
 #icon {
-    font-size: 48px;
+    font-size: 60px;
     color: #800080;
     cursor: pointer;
     transition: transform 0.3s;
-    margin: 20px;
 }
 
 #icon:hover {
     transform: scale(1.1);
 }
 
-#heartspan {
+/* Video Modal */
+#videoModal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, #f8f0ff, #d8bfe5);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    z-index: 1000;
+    border-radius: 12px;
     text-align: center;
-    margin: 20px;
+    width: 90%;
+    max-width: 800px;
+    display: none;
+}
+
+#videoModal h3 {
+    color: #4b0082;
+    margin-bottom: 20px;
+}
+
+#videoModal ul {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0;
+}
+
+#videoModal ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #6a0dad;
+    padding: 10px 15px;
+    border: 2px solid #6a0dad;
+    border-radius: 8px;
+    background: #ffffff;
+    transition: all 0.3s;
+    display: block;
+    text-align: center;
+    width: 120px;
+    margin: 10px auto;
+}
+
+#videoModal ul li a:hover {
+    background: #6a0dad;
+    color: white;
+}
+
+#videoModal button {
+    margin-top: 20px;
+    padding: 8px 20px;
+    background-color: #6a0dad;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#videoModal button:hover {
+    background-color: #800080;
+}
+
+#videoBox {
+    width: 70%;
+    height: 70%;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 20px auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#videoBox video {
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 </style>
 
@@ -96,89 +174,37 @@ body {
 
 <body>
 <div id="mainDiv">
-    <div id="content">
-        <div id="code">
-            <span class="comments">/**</span><br />
-            <span class="space"/><span class="comments">*THE CODE OF LOVE</span><br />
-            <span class="space"/><span class="comments">*/</span><br />
-            Hi Love!<br />
-            Do you remember the day we first met?<br />
-            <span class="comments">// The Stony Brook Parking Lot 💀 </span><br />
-            Since that day a spark began;<br />
-            <span class="comments">// Your face so beautiful</span><br />
-            We weren't sure about how things would go;<br />
-            But as time went on;<br />
-            Our bond grew stronger and stronger;<br />
-            From barely knowing each other to loving each other;<br />
-            We have come a long way;<br />
-            We have had our disagreements and problems;<br />
-            <span class="comments">// And I'm sure there will be more.</span><br />
-            But I know we can overcome it all;<br />
-            <br>
-            <br>
-            All I want to say is:<br />
-            I will love you forever;<br />
-            <br>
-            <br>
-            Click the heart to see my favorite moments of us.<br />
-            <br>
-            <span id="heartspan">
-                <i class="fas fa-heart" id="icon" onclick="startHeartAnimation()"></i>
-            </span>
+    <div id="loveHeart">
+        <canvas id="garden"></canvas>
+        <div id="words">
+            <div id="elapseClock"></div>
+            <div id="loveu">I LOVE YOU SO MUCH<br/> <div class="signature">- Waj</div></div>
         </div>
-        <div id="loveHeart">
-            <canvas id="garden"></canvas>
-            <div id="words">
-                <div id="messages">
-                    <span id="elapseClock"></span>
-                </div>
-                <div id="loveu">
-                    I LOVE YOU SO MUCH<br/>
-                    <div class="signature">- Waj</div>
-                </div>
-            </div>
+    </div>
+    <div id="heartspan">
+        <i class="fas fa-heart" id="icon" onclick="showVideoOptions()"></i>
+    </div>
+    <div id="videoModal">
+        <h3>My Favorite Moments</h3>
+        <div id="videoBox">
+            <video id="currentVideo" controls>
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
+        <ul>
+            <li><a href="#" onclick="playVideo('video1.mp4')">Video 1</a></li>
+            <li><a href="#" onclick="playVideo('video2.mp4')">Video 2</a></li>
+            <li><a href="#" onclick="playVideo('video3.mp4')">Video 3</a></li>
+            <li><a href="#" onclick="playVideo('video4.mp4')">Video 4</a></li>
+        </ul>
+        <button onclick="closeVideoOptions()">Close</button>
     </div>
 </div>
 
 <script type="text/javascript">
-// Restore heart animation
-function startHeartAnimation() {
-    var interval = 50;
-    var angle = 10;
-    var heart = [];
-    var animationTimer = setInterval(function () {
-        var bloom = getHeartPoint(angle);
-        var draw = true;
-        for (var i = 0; i < heart.length; i++) {
-            var p = heart[i];
-            if (Math.hypot(p[0] - bloom[0], p[1] - bloom[1]) < 15) {
-                draw = false;
-                break;
-            }
-        }
-        if (draw) {
-            heart.push(bloom);
-            garden.createRandomBloom(bloom[0], bloom[1]);
-        }
-        if (angle >= 30) {
-            clearInterval(animationTimer);
-            showMessages();
-        } else {
-            angle += 0.2;
-        }
-    }, interval);
-}
+const together = new Date(2024, 1, 24, 16, 30, 0); // Adjust date and time
 
-function getHeartPoint(angle) {
-    var t = angle / Math.PI;
-    var x = 19.5 * (16 * Math.pow(Math.sin(t), 3));
-    var y = -20 * (13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t));
-    return [$("#loveHeart").width() / 2 + x, $("#loveHeart").height() / 2 - 55 + y];
-}
-
-// Restore the elapsed time display
-const together = new Date(2024, 1, 24, 16, 30, 0); // Adjust date/time as needed
 function timeElapse() {
     const now = new Date();
     const seconds = Math.floor((now - together) / 1000);
@@ -194,15 +220,57 @@ function timeElapse() {
 
 setInterval(timeElapse, 1000);
 
-// Show messages
-function showMessages() {
-    $('#messages').fadeIn(5000, function () {
-        $('#loveu').fadeIn(3000);
-    });
+// Heart animation logic
+function startHeartAnimation() {
+    var angle = 10;
+    var heart = [];
+    var animationTimer = setInterval(function () {
+        var bloom = getHeartPoint(angle);
+        var draw = true;
+        for (var i = 0; i < heart.length; i++) {
+            var p = heart[i];
+            if (Math.hypot(p[0] - bloom[0], p[1] - bloom[1]) < 10) {
+                draw = false;
+                break;
+            }
+        }
+        if (draw) {
+            heart.push(bloom);
+            garden.createRandomBloom(bloom[0], bloom[1]);
+        }
+        if (angle >= 30) {
+            clearInterval(animationTimer);
+        } else {
+            angle += 0.2;
+        }
+    }, 50);
 }
 
-// Initialize heart animation and elapsed time
+function getHeartPoint(angle) {
+    var t = angle / Math.PI;
+    var x = 19.5 * (16 * Math.pow(Math.sin(t), 3));
+    var y = -20 * (13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t));
+    return [$("#loveHeart").width() / 2 + x, $("#loveHeart").height() / 2 - 55 + y];
+}
+
 setTimeout(startHeartAnimation, 5000);
+
+// Video Modal Logic
+function showVideoOptions() {
+    const modal = document.getElementById('videoModal');
+    modal.style.display = 'block';
+}
+
+function closeVideoOptions() {
+    const modal = document.getElementById('videoModal');
+    modal.style.display = 'none';
+}
+
+function playVideo(videoSrc) {
+    const videoElement = document.getElementById('currentVideo');
+    videoElement.src = videoSrc;
+    videoElement.play();
+}
 </script>
 </body>
 </html>
