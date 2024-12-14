@@ -86,7 +86,7 @@ function startHeartAnimation() {
 				if (progress >= str.length) {
 					clearInterval(timer);
 				}
-			}, 00); //SPEED CHANGE HERE
+			}, 0); //SPEED CHANGE HERE
 		});
 		return this;
 	};
