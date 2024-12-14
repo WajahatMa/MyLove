@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <script src="https://kit.fontawesome.com/a14ae32021.js" crossorigin="anonymous"></script>
@@ -48,7 +48,7 @@
 			Click the heart to see my favorite moment of us. <br />
 			<br>
 			<span id="heartspan">
-			<a href="IMG_2444.mp4"><i class="fas fa-heart" id="icon"></i></a>
+				<i class="fas fa-heart" id="icon" onclick="showVideoSelection()"></i>
 			</span>
 		</div>
 		<div id="loveHeart">
@@ -64,6 +64,27 @@
 				</div>
 			</div>
 		</div>
+	</div>
+
+	<div id="videoSelection" style="display: none;">
+		<h2>Select Your Favorite Moment</h2>
+		<div id="videoOptions">
+			<button onclick="playVideo('video1.mp4')">Moment 1</button>
+			<button onclick="playVideo('video2.mp4')">Moment 2</button>
+			<button onclick="playVideo('video3.mp4')">Moment 3</button>
+			<button onclick="playVideo('video4.mp4')">Moment 4</button>
+			<button onclick="playVideo('video5.mp4')">Moment 5</button>
+			<button onclick="playVideo('video6.mp4')">Moment 6</button>
+		</div>
+		<button onclick="backToWebsite()">Back to Website</button>
+	</div>
+
+	<div id="videoPlayer" style="display: none;">
+		<video id="videoElement" controls style="width: 100%; height: auto;">
+			<source id="videoSource" src="" type="video/mp4">
+			Your browser does not support the video tag.
+		</video>
+		<button onclick="backToSelection()">Back to Selection</button>
 	</div>
 </div>
 
