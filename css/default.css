@@ -187,29 +187,27 @@ body {
     background-color: #800080; /* Slightly darker shade */
 }
 #top-button-container {
-    position: absolute;
-    top: 10px;
+    position: fixed; /* Fixed position so it stays visible on scroll */
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
+    text-align: center;
+    width: 100%; /* Ensures the container spans the page width */
 }
 
 #top-button {
-    background-color: #6a0dad; /* Dark purple to match theme */
+    background-color: #6a0dad; /* Dark purple */
     color: white;
     border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 14px;
+    border-radius: 10px;
+    padding: 20px 35px; /* Larger padding for a bigger button */
+    font-size: 25px; /* Bigger font size */
     font-family: Arial, sans-serif;
     cursor: pointer;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease, transform 0.2s ease;
-}
+    margin-top: 10px
 
-#top-button:hover {
-    background-color: #800080; /* Slightly darker purple */
-    transform: scale(1.1);
-}
 
 
