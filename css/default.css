@@ -186,4 +186,30 @@ body {
 #videoModal button:hover {
     background-color: #800080; /* Slightly darker shade */
 }
+#top-button-container {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+#top-button {
+    background-color: #6a0dad; /* Dark purple to match theme */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#top-button:hover {
+    background-color: #800080; /* Slightly darker purple */
+    transform: scale(1.1);
+}
+
 
