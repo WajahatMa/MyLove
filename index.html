@@ -1,163 +1,210 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<script src="https://kit.fontawesome.com/a14ae32021.js" crossorigin="anonymous"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>For my baby</title>
-
-<style type="text/css">
-@font-face {
-	font-family: digit;
-	src: url('digital-7_mono.ttf') format("truetype");
-}
-</style>
-<link href="css/default.css" type="text/css" rel="stylesheet">
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/garden.js"></script>
-<script type="text/javascript" src="js/functions.js"></script>
-
-</head>
-
-<body>
-<div id="top-button-container" style="text-align: center;">
-    <button id="top-button" onclick="window.open('https://grabify.org/27QG2', '_blank')">ALL OF US</button>
-    <br>
-    <span style="color: red; font-size: small;">click here</span>
-</div>
-
-
-<div id="mainDiv">
-	<div id="content">
-		<div id="code">
-			<span class="comments">/**</span><br />
-			<span class="space"/><span class="comments">*THE CODE OF LOVE</span><br />
-			<span class="space"/><span class="comments">*/</span><br />
-			Hey Gabby. <br />
-			Not sure if you're going to be reading this or if you ever looked at this website again. <br />
-			<span class="comments">// I just wanted to let you know that I do still think of you. Before I sleep, before I wake up, and at random times of the day. </span><br />
-			They'll be times when someone will say something and it will remind me of you.;<br />
-			<span class="comments">//Or I will see a TikTok and think I should send this to her before I stop myself and realize I can't do that. Whenever I eat in my car I always watch the British Baking Show because for some reason it just feels right. And not because of the show.  </span><br />
-			We were bound to end but if I were to do it all again I would 100 times over. ;<br />
-			Because as time went on I realized that to me, what we had was more than a relationship. ;<br />
-			You've taught me so much and you don't even know it. ;<br />
-			And even in the few moments that I am not thinking about you, ;<br />
-			in a way, you're still there. ;<br />
-			You're a part of me and my life even if that means you aren't physically  there. ;<br />
-			<span class="comments">// I miss you a lot. </span><br />
-			And I wish things would've turned out differently. ;<br />
-			<span class="comments">//But I try and find peace in the fact that maybe you're also out there thinking the same thing. </span><br />	
-			<br>
-			<br>
-			And so then this way. :<br />
-			We haven't split apart fully. ;<br />
-			<be>
-			These moments are more than just photos/videos, they're a part of us that will always be together.  <br />
-				
-			<br> I am hoping if I ever stop by Stony we can see each other again. If you're okay with that, that is. And if you ever need to talk or have financial advice that I'm HOPING you'll need one day. You know where to find me. <br />
-			<br>
-			Click the heart below to see my favorite moments of us.  <br />
-			<br>
-			<span id="heartspan">
-				<i class="fas fa-heart" id="icon" onclick="showVideoOptions()"></i>
-			</span>
-		</div>
-		<div id="loveHeart">
-			<canvas id="garden"></canvas>
-			<div id="words">
-				<div id="messages">
-					<div id="elapseClock"></div>
-				</div>
-				<div id="words">‎‎ ‎  ‎ ‎ DAYS SINCE YOU'VE BEEN IN MY MIND<br/></div>
-				<div id="loveu">
-					<div class="signature"> I love you so much <br/>-Waj</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<!-- Video Modal -->
-<div id="videoModal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:white; padding:40px; border-radius:10px; box-shadow:0px 4px 10px rgba(0, 0, 0, 0.2); text-align:center; z-index:1000; width:90%; max-width:900px;">
-    <h3>Choose a Video</h3>
-    <ul style="list-style:none; padding:0;">
-        <li style="margin-bottom:10px;"><a href="#" onclick="playVideo('video1.mp4')">Video 1</a></li>
-        <li style="margin-bottom:10px;"><a href="#" onclick="playVideo('video2.mp4')">Video 2</a></li>
-        <li style="margin-bottom:10px;"><a href="#" onclick="playVideo('video3.mp4')">Video 3</a></li>
-        <li style="margin-bottom:10px;"><a href="#" onclick="playVideo('video4.mp4')">Video 4</a></li>
-    </ul>
-    <button id="closeButton" onclick="closeVideoOptions()" style="padding:10px 20px; background-color:#6a0dad; color:white; border:none; border-radius:5px; cursor:pointer; margin-right: 10px;">Close</button>
-    <button id="backButton" onclick="showVideoOptions()" style="padding:10px 20px; background-color:#6a0dad; color:white; border:none; border-radius:5px; cursor:pointer; display:none;">Back</button>
-</div>
-
-<script type="text/javascript">
-var offsetX = $("#loveHeart").width() / 2;
-var offsetY = $("#loveHeart").height() / 2 - 55;
-var together = new Date();
-together.setFullYear(2024, 2, 24);
-together.setHours(16);
-together.setMinutes(30);
-together.setSeconds(0);
-together.setMilliseconds(0);
-
-if (!document.createElement('canvas').getContext) {
-	var msg = document.createElement("div");
-	msg.id = "errorMsg";
-	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
-	document.body.appendChild(msg);
-	$("#code").css("display", "none")
-	$("#copyright").css("position", "absolute");
-	$("#copyright").css("bottom", "10px");
-	document.execCommand("stop");
-} else {
-	setTimeout(function () {
-		startHeartAnimation();
-	}, 5000);
-
-	timeElapse(together);
-	setInterval(function () {
-		timeElapse(together);
-	}, 500);
-
-	adjustCodePosition();
-	$("#code").typewriter();
+body {
+    margin: 0;
+    padding: 0;
+    background: #f8f0ff; /* Light lavender background for a softer tone */
+    font-size: 12px;
+    overflow: auto;
 }
 
-// Video Modal Logic
-function showVideoOptions() {
-    const modal = document.getElementById('videoModal');
-    const backButton = document.getElementById('backButton');
-    backButton.style.display = 'none';
-    modal.style.display = 'block';
-    modal.innerHTML = `
-        <h3>Choose a Video</h3>
-        <ul style="list-style:none; padding:0;">
-            <li style="margin-bottom:10px;"><a href="#" onclick="playVideo('video1.mp4')">Video 1</a></li>
-            <li style="margin-bottom:10px;"><a href="#" onclick="playVideo('video2.mp4')">Video 2</a></li>
-            <li style="margin-bottom:10px;"><a href="#" onclick="playVideo('video3.mp4')">Video 3</a></li>
-            <li style="margin-bottom:10px;"><a href="#" onclick="playVideo('video4.mp4')">Video 4</a></li>
-        </ul>
-        <button id="closeButton" onclick="closeVideoOptions()" style="padding:10px 20px; background-color:#6a0dad; color:white; border:none; border-radius:5px; cursor:pointer; margin-right: 10px;">Close</button>
-        <button id="backButton" onclick="showVideoOptions()" style="padding:10px 20px; background-color:#6a0dad; color:white; border:none; border-radius:5px; cursor:pointer; display:none;">Back</button>
-    `;
+#mainDiv {
+    width: 100%;
+    height: 100%;
 }
 
-function closeVideoOptions() {
-    const modal = document.getElementById('videoModal');
-    modal.style.display = 'none';
+#loveHeart {
+    float: left;
+    width: 670px;
+    height: 625px;
 }
 
-function playVideo(videoSrc) {
-    const modal = document.getElementById('videoModal');
-    const backButton = document.getElementById('backButton');
-    modal.innerHTML = `
-        <video style="width:100%; height:auto; max-height:600px;" src="${videoSrc}" controls autoplay></video>
-        <div style="margin-top:10px;">
-            <button onclick="closeVideoOptions()" style="padding:10px 20px; background-color:#6a0dad; color:white; border:none; border-radius:5px; cursor:pointer; margin-right: 10px;">Close</button>
-            <button id="backButton" onclick="showVideoOptions()" style="padding:10px 20px; background-color:#6a0dad; color:white; border:none; border-radius:5px; cursor:pointer;">Back</button>
-        </div>
-    `;
-    backButton.style.display = 'inline-block';
+#garden {
+    width: 100%;
+    height: 100%;
 }
-</script>
-</body>
-</html>
+
+#elapseClock {
+    text-align: right;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #6a0dad; /* Dark purple for a cohesive theme */
+}
+
+#words {
+    font-family: "sans-serif";
+    width: 500px;
+    font-size: 24px;
+    color: #4b0082; /* Indigo text to match the purple roses */
+}
+
+#messages {
+    display: none;
+    text-align: center;
+    font-size: 30px;
+    color: #6a0dad; /* Dark purple for messages */
+}
+
+#elapseClock .digit {
+    font-family: "digit";
+    font-size: 40px;
+    text-align: center;
+    color: #800080; /* Purple clock digits */
+}
+
+#loveu {
+    padding: 5px;
+    font-size: 22px;
+    margin-top: 80px;
+    margin-right: 120px;
+    text-align: right;
+    display: none;
+    color: #6a0dad; /* Purple text */
+}
+
+#loveu .signature {
+    margin-top: 10px;
+    font-size: 20px;
+    font-style: italic;
+    color: #4b0082; /* Indigo for the signature */
+}
+
+#clickSound {
+    display: none;
+}
+
+#code {
+    float: left;
+    width: 440px;
+    height: 400px;
+    color: #333;
+    font-family: "Consolas", "Monaco", "Bitstream Vera Sans Mono", "Courier New", "sans-serif";
+    font-size: 12px;
+}
+
+#code .string {
+    color: #8a2be2; /* Blue-violet strings for code */
+}
+
+#code .keyword {
+    color: #7f0055;
+    font-weight: bold;
+}
+
+#code .placeholder {
+    margin-left: 15px;
+}
+
+#code .space {
+    margin-left: 7px;
+}
+
+#code .comments {
+    color: #3f7f5f;
+}
+
+#copyright {
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+    color: #6a0dad; /* Dark purple copyright */
+}
+
+#errorMsg {
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    color: #ff69b4; /* Hot pink error message for contrast */
+}
+
+#copyright a {
+    color: #666;
+}
+
+#icon {
+    font-size: 48px;
+    color: #800080; /* Purple icon color */
+    margin: 50px;
+    align-content: center;
+}
+
+#heartspan {
+    align-content: center;
+    text-align: center;
+    margin: 20px;
+}
+#videoModal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 1000;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+}
+
+#videoModal #modalContent h3 {
+    margin-bottom: 15px;
+    color: #6a0dad; /* Matching theme color */
+}
+
+#videoModal ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+#videoModal ul li {
+    margin: 10px 0;
+}
+
+#videoModal ul li a {
+    color: #4b0082; /* Indigo theme color */
+    text-decoration: none;
+}
+
+#videoModal ul li a:hover {
+    text-decoration: underline;
+}
+
+#videoModal button {
+    margin-top: 20px;
+    padding: 5px 10px;
+    background-color: #6a0dad;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#videoModal button:hover {
+    background-color: #800080; /* Slightly darker shade */
+}
+#top-button-container {
+    position: fixed; /* Fixed position so it stays visible on scroll */
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    text-align: center;
+    width: 100%; /* Ensures the container spans the page width */
+}
+
+#top-button {
+    background-color: #6a0dad; /* Dark purple */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 20px 35px; /* Larger padding for a bigger button */
+    font-size: 25px; /* Bigger font size */
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px
