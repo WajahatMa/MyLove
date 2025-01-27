@@ -125,7 +125,7 @@ function timeElapse() {
 
 function showMessages() {
 	adjustWordsPosition();
-	$('#messages').fadeIn(300, function() { //DELAY
+	$('#messages').fadeIn(400, function() { //DELAY
 		showLoveU();
 	});
 }
