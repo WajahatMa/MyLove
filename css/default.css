@@ -1,27 +1,38 @@
+/* General reset and body styling */
 body {
     margin: 0;
     padding: 0;
     background: #f8f0ff; /* Light lavender background for a softer tone */
     font-size: 12px;
     overflow: auto;
+    box-sizing: border-box; /* Ensures consistent sizing for all elements */
 }
 
+/* Main container */
 #mainDiv {
-    width: 100%;
-    height: 100%;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-wrap: wrap; /* Wrap content on smaller screens */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
 }
 
+/* Love Heart section */
 #loveHeart {
     float: left;
-    width: 670px;
-    height: 625px;
+    width: 40%; /* Responsive width */
+    max-width: 670px; /* Prevent it from getting larger than original size */
+    height: auto; /* Maintain aspect ratio */
 }
 
+/* Garden section */
 #garden {
-    width: 100%;
-    height: 100%;
+    width: 100%; /* Responsive full width */
+    height: 100%; /* Responsive full height */
 }
 
+/* Elapse Clock */
 #elapseClock {
     text-align: right;
     font-size: 18px;
@@ -30,13 +41,16 @@ body {
     color: #6a0dad; /* Dark purple for a cohesive theme */
 }
 
+/* Words section */
 #words {
     font-family: "sans-serif";
-    width: 500px;
+    width: 100%; /* Full width for responsiveness */
+    max-width: 500px; /* Limit max width */
     font-size: 24px;
     color: #4b0082; /* Indigo text to match the purple roses */
 }
 
+/* Messages section */
 #messages {
     display: none;
     text-align: center;
@@ -44,6 +58,7 @@ body {
     color: #6a0dad; /* Dark purple for messages */
 }
 
+/* Clock digits */
 #elapseClock .digit {
     font-family: "digit";
     font-size: 40px;
@@ -51,6 +66,7 @@ body {
     color: #800080; /* Purple clock digits */
 }
 
+/* Love U section */
 #loveu {
     padding: 5px;
     font-size: 22px;
@@ -68,14 +84,17 @@ body {
     color: #4b0082; /* Indigo for the signature */
 }
 
+/* Hidden click sound */
 #clickSound {
     display: none;
 }
 
+/* Code section */
 #code {
     float: left;
-    width: 440px;
-    height: 400px;
+    width: 40%; /* Responsive width */
+    max-width: 440px; /* Prevent exceeding original size */
+    height: auto; /* Maintain aspect ratio */
     color: #333;
     font-family: "Consolas", "Monaco", "Bitstream Vera Sans Mono", "Courier New", "sans-serif";
     font-size: 12px;
@@ -102,6 +121,7 @@ body {
     color: #3f7f5f;
 }
 
+/* Copyright */
 #copyright {
     margin-top: 10px;
     text-align: center;
@@ -109,6 +129,11 @@ body {
     color: #6a0dad; /* Dark purple copyright */
 }
 
+#copyright a {
+    color: #666;
+}
+
+/* Error Message */
 #errorMsg {
     width: 100%;
     text-align: center;
@@ -119,10 +144,7 @@ body {
     color: #ff69b4; /* Hot pink error message for contrast */
 }
 
-#copyright a {
-    color: #666;
-}
-
+/* Icon */
 #icon {
     font-size: 48px;
     color: #800080; /* Purple icon color */
@@ -130,11 +152,14 @@ body {
     align-content: center;
 }
 
+/* Heartspan section */
 #heartspan {
     align-content: center;
     text-align: center;
     margin: 20px;
 }
+
+/* Video Modal */
 #videoModal {
     position: fixed;
     top: 50%;
@@ -146,7 +171,8 @@ body {
     z-index: 1000;
     border-radius: 8px;
     text-align: center;
-    width: 300px;
+    width: 90%; /* Responsive width */
+    max-width: 400px; /* Prevent exceeding original size */
 }
 
 #videoModal #modalContent h3 {
@@ -186,6 +212,8 @@ body {
 #videoModal button:hover {
     background-color: #800080; /* Slightly darker shade */
 }
+
+/* Top button container */
 #top-button-container {
     position: fixed; /* Fixed position so it stays visible on scroll */
     top: 0;
@@ -196,6 +224,7 @@ body {
     width: 100%; /* Ensures the container spans the page width */
 }
 
+/* Top button */
 #top-button {
     background-color: #6a0dad; /* Dark purple */
     color: white;
@@ -207,7 +236,31 @@ body {
     cursor: pointer;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-top: 10px
+    margin-top: 10px;
+}
 
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    #loveHeart {
+        width: 100%; /* Full width on smaller screens */
+        margin: 0;
+    }
 
+    #code {
+        width: 100%; /* Stack code block */
+        margin: 0 auto;
+    }
 
+    #words {
+        font-size: 18px; /* Smaller font for smaller screens */
+    }
+
+    #top-button {
+        padding: 15px 20px; /* Adjust button size */
+        font-size: 20px;
+    }
+
+    #videoModal {
+        width: 90%; /* Use more space on small screens */
+    }
+}
