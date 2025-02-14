@@ -1,0 +1,210 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #f8f0ff; /* Light lavender background for a softer tone */
+    font-size: 12px;
+    overflow: auto;
+}
+
+#mainDiv {
+    width: 100%;
+    height: 100%;
+}
+
+#loveHeart {
+    float: left;
+    width: 670px;
+    height: 625px;
+}
+
+#garden {
+    width: 100%;
+    height: 100%;
+}
+
+#elapseClock {
+    text-align: right;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #6a0dad; /* Dark purple for a cohesive theme */
+}
+
+#words {
+    font-family: "sans-serif";
+    width: 500px;
+    font-size: 24px;
+    color: #4b0082; /* Indigo text to match the purple roses */
+}
+
+#messages {
+    display: none;
+    text-align: center;
+    font-size: 30px;
+    color: #6a0dad; /* Dark purple for messages */
+}
+
+#elapseClock .digit {
+    font-family: "digit";
+    font-size: 40px;
+    text-align: center;
+    color: #800080; /* Purple clock digits */
+}
+
+#loveu {
+    padding: 5px;
+    font-size: 22px;
+    margin-top: 80px;
+    margin-right: 120px;
+    text-align: right;
+    display: none;
+    color: #6a0dad; /* Purple text */
+}
+
+#loveu .signature {
+    margin-top: 10px;
+    font-size: 20px;
+    font-style: italic;
+    color: #4b0082; /* Indigo for the signature */
+}
+
+#clickSound {
+    display: none;
+}
+
+#code {
+    float: left;
+    width: 440px;
+    height: 400px;
+    color: #333;
+    font-family: "Consolas", "Monaco", "Bitstream Vera Sans Mono", "Courier New", "sans-serif";
+    font-size: 12px;
+}
+
+#code .string {
+    color: #8a2be2; /* Blue-violet strings for code */
+}
+
+#code .keyword {
+    color: #7f0055;
+    font-weight: bold;
+}
+
+#code .placeholder {
+    margin-left: 15px;
+}
+
+#code .space {
+    margin-left: 7px;
+}
+
+#code .comments {
+    color: #3f7f5f;
+}
+
+#copyright {
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+    color: #6a0dad; /* Dark purple copyright */
+}
+
+#errorMsg {
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    color: #ff69b4; /* Hot pink error message for contrast */
+}
+
+#copyright a {
+    color: #666;
+}
+
+#icon {
+    font-size: 48px;
+    color: #800080; /* Purple icon color */
+    margin: 50px;
+    align-content: center;
+}
+
+#heartspan {
+    align-content: center;
+    text-align: center;
+    margin: 20px;
+}
+#videoModal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 1000;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+}
+
+#videoModal #modalContent h3 {
+    margin-bottom: 15px;
+    color: #6a0dad; /* Matching theme color */
+}
+
+#videoModal ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+#videoModal ul li {
+    margin: 10px 0;
+}
+
+#videoModal ul li a {
+    color: #4b0082; /* Indigo theme color */
+    text-decoration: none;
+}
+
+#videoModal ul li a:hover {
+    text-decoration: underline;
+}
+
+#videoModal button {
+    margin-top: 20px;
+    padding: 5px 10px;
+    background-color: #6a0dad;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#videoModal button:hover {
+    background-color: #800080; /* Slightly darker shade */
+}
+#top-button-container {
+    position: fixed; /* Fixed position so it stays visible on scroll */
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    text-align: center;
+    width: 100%; /* Ensures the container spans the page width */
+}
+
+#top-button {
+    background-color: #6a0dad; /* Dark purple */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 20px 35px; /* Larger padding for a bigger button */
+    font-size: 25px; /* Bigger font size */
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px
